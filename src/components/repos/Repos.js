@@ -12,7 +12,8 @@ const Repos = ({ username, token }) => {
     const fetchRepos = async () => {
       try {
         const response = await axios.get(
-          `https://api.github.com/users/${username}/repos`,
+          // `https://api.github.com/users/${username}/repos`,
+          "https://api.github.com/users/AikaJan/repos",
           {
             headers: {
               Authorization: `token ${token}`,

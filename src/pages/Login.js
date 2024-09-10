@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import { signInWithGoogle, signup } from "./../firebase"; // Import signup if it's defined in your firebase.js
+import { signInWithGoogle, signin, signup } from "./../firebase"; // Ensure 'signin' is defined in your firebase.js for regular sign-in
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -18,6 +18,20 @@ const Login = () => {
     try {
       await signInWithGoogle();
       navigate("/repos"); // Redirect to Repos after successful login
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSignin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      await signin(email, password);
+      navigate("/repos"); // Redirect to Repos after successful sign-in
     } catch (error) {
       setError(error.message);
     } finally {
@@ -68,14 +82,10 @@ const Login = () => {
         />
 
         <button
-          onClick={isSignUp ? handleSignup : handleGoogleSignIn}
+          onClick={isSignUp ? handleSignup : handleSignin}
           disabled={loading}
         >
-          {loading
-            ? "Processing..."
-            : isSignUp
-            ? "Sign Up"
-            : "Sign In with Google"}
+          {loading ? "Processing..." : isSignUp ? "Sign Up" : "Sign In"}
         </button>
 
         <button

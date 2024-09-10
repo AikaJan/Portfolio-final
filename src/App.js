@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./utils/skrollToTop.js";
 import Repos from "./components/repos/Repos.js";
 import Login from "./pages/Login.js";
+import Firebase from "./firebase.js";
 import { auth } from "./firebase.js"; // Import Firebase auth
 import { onAuthStateChanged } from "firebase/auth";
 

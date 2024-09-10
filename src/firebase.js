@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 
@@ -21,7 +21,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
@@ -38,9 +37,18 @@ const signInWithGoogle = () => {
 const signup = (name, email, password) => {
   return createUserWithEmailAndPassword(auth, email, password).then(
     (userCredential) => {
-      // You can set additional user information here, e.g., display name
+      // Additional user information can be set here, e.g., display name
       const user = userCredential.user;
       return user;
+    }
+  );
+};
+
+// Function to sign in with email and password
+const signin = (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password).then(
+    (userCredential) => {
+      return userCredential.user;
     }
   );
 };
@@ -50,4 +58,4 @@ const logout = () => {
   return signOut(auth);
 };
 
-export { auth, signInWithGoogle, signup, logout };
+export { auth, signInWithGoogle, signup, signin, logout };

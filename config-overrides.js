@@ -1,25 +1,18 @@
 const webpack = require("webpack");
 
-module.exports = function override(config) {
-  config.resolve = {
-    ...config.resolve,
-    alias: {
-      ...config.resolve.alias,
-      http: require.resolve("stream-http"),
-      https: require.resolve("https-browserify"),
-      stream: require.resolve("stream-browserify"),
-      crypto: require.resolve("crypto-browserify"),
-      os: require.resolve("os-browserify/browser"),
-      buffer: require.resolve("buffer"),
-    },
+module.exports = function override(config, env) {
+  config.resolve.fallback = {
+    ...config.resolve.fallback,
+    process: require.resolve("process/browser"),
+    util: require.resolve("util/"),
   };
 
-  config.plugins.push(
+  config.plugins = [
+    ...config.plugins,
     new webpack.ProvidePlugin({
       process: "process/browser",
-      Buffer: ["buffer", "Buffer"],
-    })
-  );
+    }),
+  ];
 
   return config;
 };
