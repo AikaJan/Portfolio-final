@@ -1,0 +1,66 @@
+/* .repos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.repo-card {
+    width: 300px;
+    height: 200px;
+    background-color: var(--project-card-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    box-sizing: border-box;
+
+}
+
+.repo-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+
+}
+
+.repo-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.repo-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--project-card-text);
+    margin-bottom: 10px;
+
+}
+
+.repo-url {
+    display: block;
+    padding: 10px 0;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.3;
+    color: var(--project-card-text);
+    text-decoration: none;
+    margin-top: auto;
+
+}
+
+.repo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+
+} */
