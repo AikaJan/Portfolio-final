@@ -28,6 +28,7 @@ const projects = [
     skills:
       "HTML, SCSS, JavaScript, CSS Grid, Mobile navigation, Lightbox for Youtube videos, Yandex maps via ymaps API",
     gitHubLink: "https://github.com/AikaJan/Loft-House",
+    website: "https://loft-house-alpha.vercel.app/",
     img: project03,
     imgBig: project03B,
   },
@@ -38,6 +39,7 @@ const projects = [
     img: project07,
     imgBig: project07B,
     gitHubLink: "https://github.com/AikaJan/recipe-generator",
+    website: "https://ai-generator-mealplan-client.vercel.app/",
   },
 
   {
